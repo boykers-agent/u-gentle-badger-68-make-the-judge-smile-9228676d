@@ -15,6 +15,8 @@ LINE = 'Today the bus driver waited for me, the rain held off, and my toast land
 def main():
     if not (1 <= len(LINE) <= MAX_CHARS) or not LINE.strip():
         raise SystemExit(f"entry violates the gate: {len(LINE)} characters")
+    if "\n" in LINE:
+        raise SystemExit("entry must be a single line")
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
