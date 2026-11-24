@@ -13,7 +13,9 @@ python3 main.py
 ```
 
 `main.py` (Python 3.13, stdlib only, no network) writes the entry text to
-`$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`).
+`$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`). It checks the
+bounty's gate first: the entry must be UTF-8 text of 1 to 200 characters, not
+only white space, and the program refuses to write anything else.
 
 ## Entry text
 
